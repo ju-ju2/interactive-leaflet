@@ -35,6 +35,8 @@ import { useRef, useState } from "react";
 import { GithubOutlined, MailOutlined } from "@ant-design/icons";
 import { Progress, Space } from "antd";
 import SkillComponent from "@/src/components/units/skills/skill.container";
+import IntroductionProfile from "@/src/components/units/introduction/intro.profile/intro.profile.container";
+import IntroductionComment from "@/src/components/units/introduction/intro.comment/intro.commment.container";
 
 export default function LeafletPortfolio() {
   const [dx, setDx] = useState(0);
@@ -112,34 +114,9 @@ export default function LeafletPortfolio() {
                 num={num}
               >
                 <ContentsTitle>Introduction</ContentsTitle>
-                <ProfileWrapper zoom={zoom}>
-                  {/* <ProfileImage src="/img/profileImage.png" /> */}
-                  <ProfileContentsWrapper>
-                    <ProfileName>
-                      한주연
-                      <br />
-                      HAN JUYEON.
-                    </ProfileName>
-                    <ProfileContents>1996.01</ProfileContents>
-                    <ProfileContents>
-                      <MailOutlined /> hjy2859@naver.com
-                    </ProfileContents>
-                    <ProfileContents>
-                      <GithubOutlined />{" "}
-                      <a href="https://github.com/ju-ju2" target="_blank">
-                        github.com/ju-ju2
-                      </a>
-                    </ProfileContents>
-                  </ProfileContentsWrapper>
-                </ProfileWrapper>
-                <Contents zoom={zoom}>
-                  <Bold>양방향 의사소통이 가능한 프론트엔드 개발자 </Bold>
-                  한주연입니다👩🏻‍💻🎨. <br />
-                  디자이너 출신 개발자로써 디자인과 개발 간의 간극을 줄이는
-                  원활한 소통 능력을 가지고 있습니다. UI/UX 디자인과 웹 개발을
-                  통합적으로 생각하고, 높은 수준의 결과물을 만들어내는 것을
-                  목표로 하고 있습니다.
-                </Contents>
+                <IntroductionProfile zoom={zoom} />
+                <IntroductionComment zoom={zoom} />
+
                 <MoreView zoom={zoom}>더보기</MoreView>
               </PageFaceInnerBox>
               <BackBtn onClick={onClickBack} zoom={zoom}>
@@ -155,7 +132,6 @@ export default function LeafletPortfolio() {
                   이런 기술 스택을 보유하고 있습니다.
                 </Contents>
                 <MoreView zoom={zoom}>더보기</MoreView>
-
                 <SkillComponent zoom={zoom}></SkillComponent>
               </PageFaceInnerBox>
               <BackBtn onClick={onClickBack} zoom={zoom}>

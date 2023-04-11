@@ -161,39 +161,7 @@ export const CloseBtn = styled.div`
     return props.zoom ? "none" : "block";
   }};
 `;
-export const ProfileWrapper = styled.div`
-  margin: 5% 0 5% 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  display: ${(props) => {
-    return props.zoom ? "block" : "none";
-  }};
-`;
 
-export const ProfileContents = styled.div`
-  font-size: 10px;
-  font-family: "NotoSans";
-`;
-export const ProfileName = styled.div`
-  font-size: 16px;
-  font-weight: 500;
-  font-family: "NotoSans";
-  margin-bottom: 10%;
-`;
-export const ProfileImage = styled.img`
-  width: 40%;
-  height: 40%;
-  position: relative;
-  left: 0;
-  top: 0;
-`;
-export const ProfileContentsWrapper = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10%;
-`;
 export const ContentsTitle = styled.div`
   font-size: 16px;
   font-weight: bold;
@@ -215,11 +183,7 @@ export const Contents = styled.span`
   word-break: keep-all;
   text-align: justify;
 `;
-export const Bold = styled.span`
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-`;
+
 export const MoreView = styled.div`
   position: absolute;
   right: 0;
