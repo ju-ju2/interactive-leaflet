@@ -125,11 +125,19 @@ export const PageFaceInnerBox = styled.div`
     return props.zoom ? "default" : "pointer";
   }};
 
-  &:not(:nth-of-type(${(props) => props.num})) {
+  /* &:not(:nth-of-type(${(props) => props.num})) {
     display: ${(props) => {
+    return props.zoom ? "none" : "block";
+  }};
+  } */
+  display: ${(props) => {
+    // return props.zoom ? "none" : "block";
+    if (props.num === props.target) {
+      return props.zoom ? "block" : "none";
+    } else {
       return props.zoom ? "none" : "block";
-    }};
-  }
+    }
+  }};
 `;
 export const BackBtn = styled.button`
   position: absolute;
@@ -193,4 +201,10 @@ export const MoreView = styled.div`
   visibility: ${(props) => {
     return props.zoom ? "hidden" : "visible";
   }};
+`;
+export const ProjectCard = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  border-radius: 1vh;
 `;

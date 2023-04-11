@@ -1,7 +1,6 @@
 import Head from "next/head";
 import {
   BackBtn,
-  Bold,
   CloseBtn,
   Container,
   Contents,
@@ -14,26 +13,12 @@ import {
   Page2,
   Page3,
   PageFace,
+  PageFaceForHidden,
   PageFaceInnerBox,
-  PageHeader,
-  ProfileContents,
-  ProfileContents1,
-  ProfileContentsWrapper,
-  ProfileImage,
-  ProfileName,
-  ProfileWrapper,
-  SkillChartDiv,
-  SkillChartdiv,
-  SkillContainer,
-  SkillContentsContainer,
-  SkillContentsTitle,
-  SkillContentsWrapper,
-  SkillTitle,
-  SkillWrapper,
+  PageHiddenWrapper,
+  ProjectCard,
 } from "./style";
 import { useRef, useState } from "react";
-import { GithubOutlined, MailOutlined } from "@ant-design/icons";
-import { Progress, Space } from "antd";
 import SkillComponent from "@/src/components/units/skills/skill.container";
 import IntroductionProfile from "@/src/components/units/introduction/intro.profile/intro.profile.container";
 import IntroductionComment from "@/src/components/units/introduction/intro.comment/intro.commment.container";
@@ -45,16 +30,18 @@ export default function LeafletPortfolio() {
   const [angle, setAngle] = useState(0);
   const [zoom, setZoom] = useState(false);
   const page1Ref = useRef(null);
-  const [num, setNum] = useState(0);
   const [page, setPage] = useState(0);
+  const [targetBox, setTargetBox] = useState(0);
 
-  const onClickPage1 = (event) => {
-    event.currentTarget.style.transform = `rotateY(-150deg)`;
-    page1Ref.current = event.currentTarget;
+  const onClickPage = (page) => (event) => {
+    if (page === 1) {
+      event.currentTarget.style.transform = `rotateY(-150deg)`;
+      page1Ref.current = event.currentTarget;
+    } else {
+      event.currentTarget.style.transform = `rotateY(150deg)`;
+    }
   };
-  const onClickPage3 = (event) => {
-    event.currentTarget.style.transform = `rotateY(150deg)`;
-  };
+
   const onClickZoomIn = (page, num) => (event) => {
     if (!zoom) {
       const rect = event.currentTarget.getBoundingClientRect();
@@ -72,8 +59,8 @@ export default function LeafletPortfolio() {
         setPage(3);
       }
       setZoom(true);
-      setNum(num);
     }
+    setTargetBox(num);
   };
   const onClickBack = (event) => {
     event.stopPropagation();
@@ -82,6 +69,7 @@ export default function LeafletPortfolio() {
     setDz(0);
     setAngle(0);
     setZoom(false);
+    setTargetBox(0);
     // setSelectedPage(null);
   };
   const onClickClose = (event) => {
@@ -96,10 +84,9 @@ export default function LeafletPortfolio() {
   };
   return (
     <>
-      <Head></Head>
       <Container>
         <Leaflet dx={dx} dy={dy} dz={dz} angle={angle}>
-          <Page1 onClick={onClickPage1}>
+          <Page1 onClick={onClickPage(1)}>
             <PageFace>
               <CoverTitle>Juyeon's Portfolio</CoverTitle>
               <CoverSubTitle>Click Me!!</CoverSubTitle>
@@ -111,7 +98,8 @@ export default function LeafletPortfolio() {
               <PageFaceInnerBox
                 onClick={onClickZoomIn(1, 1)}
                 zoom={zoom}
-                num={num}
+                num={1}
+                target={targetBox}
               >
                 <ContentsTitle>Introduction</ContentsTitle>
                 <IntroductionProfile zoom={zoom} />
@@ -125,7 +113,8 @@ export default function LeafletPortfolio() {
               <PageFaceInnerBox
                 onClick={onClickZoomIn(1, 2)}
                 zoom={zoom}
-                num={num}
+                num={2}
+                target={targetBox}
               >
                 <ContentsTitle>Skills</ContentsTitle>
                 <Contents zoom={zoom}>
@@ -140,17 +129,31 @@ export default function LeafletPortfolio() {
               <PageFaceInnerBox
                 onClick={onClickZoomIn(1, 3)}
                 zoom={zoom}
-                num={num}
+                num={3}
+                target={targetBox}
               >
                 <ContentsTitle>Experience</ContentsTitle>
               </PageFaceInnerBox>
             </PageFace>
           </Page1>
           <Page2>
-            <PageFace>2F</PageFace>
+            <PageFace>
+              <BackBtn onClick={onClickBack} zoom={zoom}>
+                ←뒤로가기
+              </BackBtn>
+              <PageFaceInnerBox
+                onClick={onClickZoomIn(2, 4)}
+                zoom={zoom}
+                num={4}
+                target={targetBox}
+              >
+                <ContentsTitle>Project</ContentsTitle>
+                <ProjectCard></ProjectCard>
+              </PageFaceInnerBox>
+            </PageFace>
             <PageFace>2B</PageFace>
           </Page2>
-          <Page3 onClick={onClickPage3}>
+          <Page3 onClick={onClickPage(3)}>
             <PageFace>
               <CoverSubTitle>Welcome</CoverSubTitle>
             </PageFace>
@@ -158,7 +161,17 @@ export default function LeafletPortfolio() {
               <CloseBtn onClick={onClickClose} zoom={zoom}>
                 ✗ close
               </CloseBtn>
-              2B
+              <BackBtn onClick={onClickBack} zoom={zoom}>
+                ←뒤로가기
+              </BackBtn>
+              <PageFaceInnerBox
+                onClick={onClickZoomIn(3, 5)}
+                zoom={zoom}
+                num={5}
+                target={targetBox}
+              >
+                <ContentsTitle>Project</ContentsTitle>
+              </PageFaceInnerBox>
             </PageFace>
           </Page3>
         </Leaflet>
