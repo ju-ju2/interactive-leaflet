@@ -24,7 +24,7 @@ export const Leaflet = styled.div`
 
   transform: translate3d(
       ${(props) => {
-        return `${props.dx}px, ${props.dy}px, ${props.dz}vw`;
+        return `${props.dx}px, ${props.dy}px, ${props.dz}vh`;
       }}
     )
     rotateY(
@@ -43,7 +43,10 @@ export const Page1 = styled.div`
   transform-style: preserve-3d;
   z-index: 2;
   transform-origin: left;
-  > :nth-child(2) {
+  > :nth-of-type(1) {
+    cursor: pointer;
+  }
+  > :nth-of-type(2) {
     background-color: white;
   }
 `;
@@ -55,7 +58,7 @@ export const Page2 = styled.div`
   height: 100%;
   transition: 1s;
   transform-style: preserve-3d;
-  > :nth-child(1) {
+  > :nth-of-type(1) {
     background-color: white;
   }
 `;
@@ -69,7 +72,10 @@ export const Page3 = styled.div`
   transform-style: preserve-3d;
   z-index: 1;
   transform-origin: right;
-  > :nth-child(2) {
+  > :nth-of-type(1) {
+    cursor: pointer;
+  }
+  > :nth-of-type(2) {
     background-color: white;
   }
 `;
@@ -79,7 +85,6 @@ export const PageFace = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  cursor: pointer;
   background-color: antiquewhite;
   backface-visibility: hidden;
   transform-style: preserve-3d;
@@ -89,7 +94,7 @@ export const PageFace = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 10%;
   /* font-family: "Shadows Into Light", cursive; */
 `;
@@ -98,21 +103,44 @@ export const CoverTitle = styled.div`
   text-align: center;
   margin-bottom: 10%;
   text-align: center;
+  font-family: "myfont";
 `;
 export const CoverSubTitle = styled.div`
   font-size: 2vw;
   text-align: center;
+  font-family: "myfont";
 `;
 
 export const PageFaceInnerBox = styled.div`
   width: 100%;
-  height: 20%;
-  background-color: yellow;
+  position: relative;
+  /* height: 20%; */
+  height: ${(props) => {
+    return props.zoom ? "auto" : "20%";
+  }};
+  /* background-color: yellow; */
   margin-bottom: 5%;
+
+  cursor: ${(props) => {
+    return props.zoom ? "default" : "pointer";
+  }};
+
+  &:not(:nth-of-type(${(props) => props.num})) {
+    display: ${(props) => {
+      return props.zoom ? "none" : "block";
+    }};
+  }
 `;
 export const BackBtn = styled.button`
+  position: absolute;
+  right: 0%;
+  top: 3%;
+  font-size: 8px;
+  font-weight: 600;
   background: none;
   border: none;
+  z-index: 100;
+  padding: 5%;
   cursor: pointer;
   visibility: ${(props) => {
     return props.zoom ? "visible" : "hidden";
@@ -128,4 +156,117 @@ export const CloseBtn = styled.div`
   text-shadow: rgba(0, 0, 0, 0.3) 0 1px 0;
   background: none;
   border: none;
+  cursor: pointer;
+  display: ${(props) => {
+    return props.zoom ? "none" : "block";
+  }};
+`;
+export const ProfileWrapper = styled.div`
+  margin: 5% 0 5% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  display: ${(props) => {
+    return props.zoom ? "block" : "none";
+  }};
+`;
+
+export const ProfileContents = styled.div`
+  font-size: 10px;
+  font-family: "NotoSans";
+`;
+export const ProfileName = styled.div`
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "NotoSans";
+  margin-bottom: 10%;
+`;
+export const ProfileImage = styled.img`
+  width: 40%;
+  height: 40%;
+  position: relative;
+  left: 0;
+  top: 0;
+`;
+export const ProfileContentsWrapper = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+`;
+export const ContentsTitle = styled.div`
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
+  margin-bottom: 5%;
+`;
+export const Contents = styled.span`
+  font-size: 8px;
+  display: -webkit-box;
+  /* 표시할 줄 수 */
+  -webkit-line-clamp: ${(props) => {
+    return props.zoom ? "100" : "2";
+  }};
+  /* -webkit-line-clamp: 2;  */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  word-break: keep-all;
+  text-align: justify;
+`;
+export const Bold = styled.span`
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+`;
+export const MoreView = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0%;
+  font-size: 8px;
+  font-weight: 600;
+  visibility: ${(props) => {
+    return props.zoom ? "hidden" : "visible";
+  }};
+`;
+export const SkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  visibility: ${(props) => {
+    return props.zoom ? "visible" : "hidden";
+  }};
+`;
+export const SkillWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 10%;
+`;
+export const SkillTitle = styled.div`
+  font-size: 12px;
+  width: 40%;
+`;
+export const SkillContentsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  background-color: aliceblue;
+`;
+export const SkillContentsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+export const SkillContentsTitle = styled.div`
+  font-size: 12px;
+  width: 30%;
+  margin-right: auto;
+`;
+export const SkillChartDiv = styled.div`
+  width: 60%;
+  height: 12px;
+  background-color: lightgray;
 `;

@@ -1,18 +1,39 @@
 import Head from "next/head";
 import {
   BackBtn,
+  Bold,
   CloseBtn,
   Container,
+  Contents,
+  ContentsTitle,
   CoverSubTitle,
   CoverTitle,
   Leaflet,
+  MoreView,
   Page1,
   Page2,
   Page3,
   PageFace,
   PageFaceInnerBox,
+  PageHeader,
+  ProfileContents,
+  ProfileContents1,
+  ProfileContentsWrapper,
+  ProfileImage,
+  ProfileName,
+  ProfileWrapper,
+  SkillChartDiv,
+  SkillChartdiv,
+  SkillContainer,
+  SkillContentsContainer,
+  SkillContentsTitle,
+  SkillContentsWrapper,
+  SkillTitle,
+  SkillWrapper,
 } from "./style";
 import { useRef, useState } from "react";
+import { GithubOutlined, MailOutlined } from "@ant-design/icons";
+import { Progress, Space } from "antd";
 
 export default function LeafletPortfolio() {
   const [dx, setDx] = useState(0);
@@ -21,6 +42,8 @@ export default function LeafletPortfolio() {
   const [angle, setAngle] = useState(0);
   const [zoom, setZoom] = useState(false);
   const page1Ref = useRef(null);
+  const [num, setNum] = useState(0);
+  const [page, setPage] = useState(0);
 
   const onClickPage1 = (event) => {
     event.currentTarget.style.transform = `rotateY(-150deg)`;
@@ -29,14 +52,24 @@ export default function LeafletPortfolio() {
   const onClickPage3 = (event) => {
     event.currentTarget.style.transform = `rotateY(150deg)`;
   };
-  const onClickZoomIn = (event) => {
+  const onClickZoomIn = (page, num) => (event) => {
     if (!zoom) {
       const rect = event.currentTarget.getBoundingClientRect();
       setDx(window.innerWidth / 2 - (rect.x + rect.width / 2));
-      setDy(window.innerHeight / 2 - (rect.y + rect.height / 2));
+      // setDy(window.innerHeight / 2 - (rect.y + rect.height / 2));
       setDz(50);
-      setAngle(-30);
+      if (page === 1) {
+        setAngle(-30);
+        setPage(1);
+      } else if (page === 2) {
+        setAngle(0);
+        setPage(2);
+      } else {
+        setAngle(30);
+        setPage(3);
+      }
       setZoom(true);
+      setNum(num);
     }
   };
   const onClickBack = (event) => {
@@ -46,6 +79,7 @@ export default function LeafletPortfolio() {
     setDz(0);
     setAngle(0);
     setZoom(false);
+    // setSelectedPage(null);
   };
   const onClickClose = (event) => {
     event.stopPropagation();
@@ -68,13 +102,145 @@ export default function LeafletPortfolio() {
               <CoverSubTitle>Click Me!!</CoverSubTitle>
             </PageFace>
             <PageFace>
-              <PageFaceInnerBox onClick={onClickZoomIn}>
-                <BackBtn onClick={onClickBack} zoom={zoom}>
-                  ←뒤로가기
-                </BackBtn>
+              <BackBtn onClick={onClickBack} zoom={zoom}>
+                ←뒤로가기
+              </BackBtn>
+              <PageFaceInnerBox
+                onClick={onClickZoomIn(1, 1)}
+                zoom={zoom}
+                num={num}
+              >
+                <ContentsTitle>Introduction</ContentsTitle>
+                <ProfileWrapper zoom={zoom}>
+                  {/* <ProfileImage src="/img/profileImage.png" /> */}
+                  <ProfileContentsWrapper>
+                    <ProfileName>
+                      한주연
+                      <br />
+                      HAN JUYEON.
+                    </ProfileName>
+                    <ProfileContents>1996.01</ProfileContents>
+                    <ProfileContents>
+                      <MailOutlined /> hjy2859@naver.com
+                    </ProfileContents>
+                    <ProfileContents>
+                      <GithubOutlined />{" "}
+                      <a href="https://github.com/ju-ju2" target="_blank">
+                        github.com/ju-ju2
+                      </a>
+                    </ProfileContents>
+                  </ProfileContentsWrapper>
+                </ProfileWrapper>
+                <Contents zoom={zoom}>
+                  <Bold>양방향 의사소통이 가능한 프론트엔드 개발자 </Bold>
+                  한주연입니다👩🏻‍💻🎨. <br />
+                  디자이너 출신 개발자로써 디자인과 개발 간의 간극을 줄이는
+                  원활한 소통 능력을 가지고 있습니다. UI/UX 디자인과 웹 개발을
+                  통합적으로 생각하고, 높은 수준의 결과물을 만들어내는 것을
+                  목표로 하고 있습니다.
+                </Contents>
+                <MoreView zoom={zoom}>더보기</MoreView>
               </PageFaceInnerBox>
-              <PageFaceInnerBox onClick={onClickZoomIn}></PageFaceInnerBox>
-              <PageFaceInnerBox onClick={onClickZoomIn}></PageFaceInnerBox>
+              <BackBtn onClick={onClickBack} zoom={zoom}>
+                ←뒤로가기
+              </BackBtn>
+              <PageFaceInnerBox
+                onClick={onClickZoomIn(1, 2)}
+                zoom={zoom}
+                num={num}
+              >
+                <ContentsTitle>Skills</ContentsTitle>
+                <Contents zoom={zoom}>
+                  이런 기술 스택을 보유하고 있습니다.
+                </Contents>
+                <MoreView zoom={zoom}>더보기</MoreView>
+
+                <SkillContainer zoom={zoom}>
+                  <SkillWrapper>
+                    <SkillTitle>Language</SkillTitle>
+                    <SkillContentsContainer>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>javascript</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>typescript</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                    </SkillContentsContainer>
+                  </SkillWrapper>
+                  <SkillWrapper>
+                    <SkillTitle>Framework</SkillTitle>
+                    <SkillContentsContainer>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>React</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>Nest.js</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>typescript</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                    </SkillContentsContainer>
+                  </SkillWrapper>
+                  <SkillWrapper>
+                    <SkillTitle>MarkUp</SkillTitle>
+                    <SkillContentsContainer>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>HTML</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>CSS</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>Emotion</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                    </SkillContentsContainer>
+                  </SkillWrapper>
+                  <SkillWrapper>
+                    <SkillTitle>Database</SkillTitle>
+                    <SkillContentsContainer>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>Firebase</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>MongoDB</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                    </SkillContentsContainer>
+                  </SkillWrapper>
+                  <SkillWrapper>
+                    <SkillTitle>Tool</SkillTitle>
+                    <SkillContentsContainer>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>Git</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                      <SkillContentsWrapper>
+                        <SkillContentsTitle>Github</SkillContentsTitle>
+                        <SkillChartDiv></SkillChartDiv>
+                      </SkillContentsWrapper>
+                    </SkillContentsContainer>
+                  </SkillWrapper>
+                </SkillContainer>
+              </PageFaceInnerBox>
+              <BackBtn onClick={onClickBack} zoom={zoom}>
+                ←뒤로가기
+              </BackBtn>
+              <PageFaceInnerBox
+                onClick={onClickZoomIn(1, 3)}
+                zoom={zoom}
+                num={num}
+              >
+                <ContentsTitle>Experience</ContentsTitle>
+              </PageFaceInnerBox>
             </PageFace>
           </Page1>
           <Page2>
@@ -83,11 +249,13 @@ export default function LeafletPortfolio() {
           </Page2>
           <Page3 onClick={onClickPage3}>
             <PageFace>
-              <CoverSubTitle>About Me</CoverSubTitle>
+              <CoverSubTitle>Welcome</CoverSubTitle>
             </PageFace>
             <PageFace>
-              <CloseBtn onClick={onClickClose}>✗ close</CloseBtn>
-              3B
+              <CloseBtn onClick={onClickClose} zoom={zoom}>
+                ✗ close
+              </CloseBtn>
+              2B
             </PageFace>
           </Page3>
         </Leaflet>
