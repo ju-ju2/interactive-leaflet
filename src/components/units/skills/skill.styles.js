@@ -36,7 +36,12 @@ export const SkillContentsTitle = styled.div`
   margin-right: auto;
 `;
 export const SkillChartDiv = styled.div`
-  width: 60%;
+  width: 55%;
   height: 12px;
   background-color: lightgray;
+`;
+export const SkillIcon = styled.img`
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
 `;

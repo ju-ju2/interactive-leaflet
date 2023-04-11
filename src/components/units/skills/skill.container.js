@@ -7,10 +7,12 @@ export default function SkillComponent(props) {
         <S.SkillTitle>Language</S.SkillTitle>
         <S.SkillContentsContainer>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/javascript.svg" />
             <S.SkillContentsTitle>javascript</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/typescript.svg" />
             <S.SkillContentsTitle>typescript</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
@@ -20,15 +22,20 @@ export default function SkillComponent(props) {
         <S.SkillTitle>Framework</S.SkillTitle>
         <S.SkillContentsContainer>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/react.svg" />
             <S.SkillContentsTitle>React</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
           <S.SkillContentsWrapper>
-            <S.SkillContentsTitle>Nest.js</S.SkillContentsTitle>
+            <S.SkillIcon src="/img/skills/nextjs.svg" />
+
+            <S.SkillContentsTitle>Next.js</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
           <S.SkillContentsWrapper>
-            <S.SkillContentsTitle>typescript</S.SkillContentsTitle>
+            <S.SkillIcon src="/img/skills/nodejs.svg" />
+
+            <S.SkillContentsTitle>Node.js</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
         </S.SkillContentsContainer>
@@ -37,10 +44,14 @@ export default function SkillComponent(props) {
         <S.SkillTitle>MarkUp</S.SkillTitle>
         <S.SkillContentsContainer>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/html.svg" />
+
             <S.SkillContentsTitle>HTML</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/css.svg" />
+
             <S.SkillContentsTitle>CSS</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
@@ -54,10 +65,14 @@ export default function SkillComponent(props) {
         <S.SkillTitle>Database</S.SkillTitle>
         <S.SkillContentsContainer>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/firebase.svg" />
+
             <S.SkillContentsTitle>Firebase</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/mongodb.svg" />
+
             <S.SkillContentsTitle>MongoDB</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
@@ -67,10 +82,14 @@ export default function SkillComponent(props) {
         <S.SkillTitle>Tool</S.SkillTitle>
         <S.SkillContentsContainer>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/git.svg" />
+
             <S.SkillContentsTitle>Git</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
           <S.SkillContentsWrapper>
+            <S.SkillIcon src="/img/skills/github.svg" />
+
             <S.SkillContentsTitle>Github</S.SkillContentsTitle>
             <S.SkillChartDiv></S.SkillChartDiv>
           </S.SkillContentsWrapper>
