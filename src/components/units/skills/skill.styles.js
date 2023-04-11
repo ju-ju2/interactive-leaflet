@@ -17,6 +17,10 @@ export const SkillWrapper = styled.div`
 export const SkillTitle = styled.div`
   font-size: 12px;
   width: 40%;
+  font-weight: 600;
+  @media (max-width: 1400px) {
+    font-size: 10px;
+  }
 `;
 export const SkillContentsContainer = styled.div`
   display: flex;
@@ -32,15 +36,24 @@ export const SkillContentsWrapper = styled.div`
 `;
 export const SkillContentsTitle = styled.div`
   font-size: 12px;
-  width: 30%;
   margin-right: auto;
+  @media (max-width: 1400px) {
+    font-size: 10px;
+  }
 `;
 export const SkillChartDiv = styled.div`
+  @media (max-width: 1400px) {
+    width: 45%;
+  }
   width: 55%;
-  height: 12px;
+  height: 8px;
   background-color: lightgray;
 `;
 export const SkillIcon = styled.img`
+  @media (max-width: 1400px) {
+    width: 10px;
+    height: 10px;
+  }
   width: 12px;
   height: 12px;
   margin-right: 6px;

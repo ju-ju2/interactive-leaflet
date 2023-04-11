@@ -8,23 +8,46 @@ export const Container = styled.div`
   perspective: 1500px;
   overflow: hidden;
 `;
+export const Notice = styled.div`
+  @media (max-width: 1023px) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
 export const Leaflet = styled.div`
-  position: absolute;
-  width: 20vw;
-  height: 30vw;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  transform-style: preserve-3d;
-  transition: 1s;
+  @media (max-width: 1023px) {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    position: absolute;
+    width: 20vw;
+    height: 30vw;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform-style: preserve-3d;
+    transition: 1s;
+  }
+  @media (min-width: 1500px) {
+    width: 350px;
+    height: 525px;
+  }
 
   /* animation: leaflet-ani 1s forwards; */
 
   transform: translate3d(
       ${(props) => {
-        return `${props.dx}px, ${props.dy}px, ${props.dz}vh`;
+        return `${props.dx}px, ${props.dy}px, ${props.dz}px`;
       }}
     )
     rotateY(
@@ -98,14 +121,27 @@ export const PageFace = styled.div`
   padding: 10%;
   /* font-family: "Shadows Into Light", cursive; */
 `;
+export const CoverWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 export const CoverTitle = styled.div`
+  @media (min-width: 1500px) {
+    font-size: 75px;
+  }
   font-size: 5vw;
   text-align: center;
   margin-bottom: 10%;
-  text-align: center;
   font-family: "myfont";
 `;
 export const CoverSubTitle = styled.div`
+  @media (min-width: 1500px) {
+    font-size: 30px;
+  }
   font-size: 2vw;
   text-align: center;
   font-family: "myfont";
@@ -116,8 +152,9 @@ export const PageFaceInnerBox = styled.div`
   position: relative;
   /* height: 20%; */
   height: ${(props) => {
-    return props.zoom ? "auto" : "20%";
+    return props.zoom ? "auto" : "30%";
   }};
+
   /* background-color: yellow; */
   margin-bottom: 5%;
 
@@ -155,7 +192,6 @@ export const BackBtn = styled.button`
   }};
 `;
 export const CloseBtn = styled.div`
-  /* display: none; */
   position: absolute;
   right: 5%;
   top: -2vw;
@@ -168,16 +204,25 @@ export const CloseBtn = styled.div`
   display: ${(props) => {
     return props.zoom ? "none" : "block";
   }};
+  @media (min-width: 1500px) {
+    font-size: 22.5px;
+    top: -30px;
+  }
 `;
 
 export const ContentsTitle = styled.div`
   font-size: 16px;
   font-weight: bold;
   color: gray;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 `;
 export const Contents = styled.span`
-  font-size: 8px;
+  @media (max-width: 1200px) {
+    font-size: 10px;
+  }
+
+  font-size: 12px;
+  /* font-size: 8px; */
   display: -webkit-box;
   /* 표시할 줄 수 */
   -webkit-line-clamp: ${(props) => {

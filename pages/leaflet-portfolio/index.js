@@ -1,4 +1,3 @@
-import Head from "next/head";
 import {
   BackBtn,
   CloseBtn,
@@ -7,15 +6,15 @@ import {
   ContentsTitle,
   CoverSubTitle,
   CoverTitle,
+  CoverWrapper,
   Leaflet,
   MoreView,
+  Notice,
   Page1,
   Page2,
   Page3,
   PageFace,
-  PageFaceForHidden,
   PageFaceInnerBox,
-  PageHiddenWrapper,
   ProjectCard,
 } from "./style";
 import { useRef, useState } from "react";
@@ -30,7 +29,6 @@ export default function LeafletPortfolio() {
   const [angle, setAngle] = useState(0);
   const [zoom, setZoom] = useState(false);
   const page1Ref = useRef(null);
-  const [page, setPage] = useState(0);
   const [targetBox, setTargetBox] = useState(0);
 
   const onClickPage = (page) => (event) => {
@@ -47,16 +45,13 @@ export default function LeafletPortfolio() {
       const rect = event.currentTarget.getBoundingClientRect();
       setDx(window.innerWidth / 2 - (rect.x + rect.width / 2));
       // setDy(window.innerHeight / 2 - (rect.y + rect.height / 2));
-      setDz(50);
+      setDz(500);
       if (page === 1) {
         setAngle(-30);
-        setPage(1);
       } else if (page === 2) {
         setAngle(0);
-        setPage(2);
       } else {
         setAngle(30);
-        setPage(3);
       }
       setZoom(true);
     }
@@ -85,11 +80,14 @@ export default function LeafletPortfolio() {
   return (
     <>
       <Container>
+        <Notice>가로 1024px 사이즈 이상의 환경에서만 구현가능합니다.🙆🏻‍♀️</Notice>
         <Leaflet dx={dx} dy={dy} dz={dz} angle={angle}>
           <Page1 onClick={onClickPage(1)}>
             <PageFace>
-              <CoverTitle>Juyeon's Portfolio</CoverTitle>
-              <CoverSubTitle>Click Me!!</CoverSubTitle>
+              <CoverWrapper>
+                <CoverTitle>Juyeon's Portfolio</CoverTitle>
+                <CoverSubTitle>Click Me!!</CoverSubTitle>
+              </CoverWrapper>
             </PageFace>
             <PageFace>
               <BackBtn onClick={onClickBack} zoom={zoom}>
@@ -155,7 +153,9 @@ export default function LeafletPortfolio() {
           </Page2>
           <Page3 onClick={onClickPage(3)}>
             <PageFace>
-              <CoverSubTitle>Welcome</CoverSubTitle>
+              <CoverWrapper>
+                <CoverSubTitle>Welcome</CoverSubTitle>
+              </CoverWrapper>
             </PageFace>
             <PageFace>
               <CloseBtn onClick={onClickClose} zoom={zoom}>
