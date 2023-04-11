@@ -34,6 +34,7 @@ import {
 import { useRef, useState } from "react";
 import { GithubOutlined, MailOutlined } from "@ant-design/icons";
 import { Progress, Space } from "antd";
+import SkillComponent from "@/src/components/units/skills/skill.container";
 
 export default function LeafletPortfolio() {
   const [dx, setDx] = useState(0);
@@ -155,81 +156,7 @@ export default function LeafletPortfolio() {
                 </Contents>
                 <MoreView zoom={zoom}>더보기</MoreView>
 
-                <SkillContainer zoom={zoom}>
-                  <SkillWrapper>
-                    <SkillTitle>Language</SkillTitle>
-                    <SkillContentsContainer>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>javascript</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>typescript</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                    </SkillContentsContainer>
-                  </SkillWrapper>
-                  <SkillWrapper>
-                    <SkillTitle>Framework</SkillTitle>
-                    <SkillContentsContainer>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>React</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>Nest.js</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>typescript</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                    </SkillContentsContainer>
-                  </SkillWrapper>
-                  <SkillWrapper>
-                    <SkillTitle>MarkUp</SkillTitle>
-                    <SkillContentsContainer>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>HTML</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>CSS</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>Emotion</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                    </SkillContentsContainer>
-                  </SkillWrapper>
-                  <SkillWrapper>
-                    <SkillTitle>Database</SkillTitle>
-                    <SkillContentsContainer>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>Firebase</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>MongoDB</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                    </SkillContentsContainer>
-                  </SkillWrapper>
-                  <SkillWrapper>
-                    <SkillTitle>Tool</SkillTitle>
-                    <SkillContentsContainer>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>Git</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                      <SkillContentsWrapper>
-                        <SkillContentsTitle>Github</SkillContentsTitle>
-                        <SkillChartDiv></SkillChartDiv>
-                      </SkillContentsWrapper>
-                    </SkillContentsContainer>
-                  </SkillWrapper>
-                </SkillContainer>
+                <SkillComponent zoom={zoom}></SkillComponent>
               </PageFaceInnerBox>
               <BackBtn onClick={onClickBack} zoom={zoom}>
                 ←뒤로가기
