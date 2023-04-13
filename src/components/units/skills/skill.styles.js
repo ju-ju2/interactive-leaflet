@@ -70,6 +70,7 @@ export const SkillIcon = styled.img`
   height: 12px;
   margin-right: 6px;
 `;
+
 export const HiddenWrapper = styled.div`
-  display: ${(props) => (props.zoom ? "block" : "none")};
+  opacity: ${(props) => (props.zoom ? 1 : 0)};
 `;

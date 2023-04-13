@@ -53,3 +53,6 @@ export const ProfileContents = styled.div`
     font-size: 12px;
   }
 `;
+export const HiddenWrapper = styled.div`
+  opacity: ${(props) => (props.zoom ? 1 : 0)};
+`;

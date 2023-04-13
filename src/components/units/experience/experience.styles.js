@@ -26,6 +26,7 @@ export const ExperienceTitle = styled.div`
 `;
 export const ExperienceContentsWrapper = styled.div`
   width: 75%;
+  height: ${(props) => (props.zoom ? "auto" : "70px")};
   display: flex;
   flex-direction: column;
   margin-right: auto;

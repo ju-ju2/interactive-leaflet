@@ -9,9 +9,7 @@ export const Contents = styled.div`
 
   display: -webkit-box;
   /* 표시할 줄 수 */
-  -webkit-line-clamp: ${(props) => {
-    return props.zoom ? "100" : "2";
-  }};
+
   /* -webkit-line-clamp: 2;  */
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -43,4 +41,7 @@ export const Bold = styled.span`
   @media (min-width: 1500px) {
     font-size: 15px;
   }
+`;
+export const HiddenWrapper = styled.div`
+  opacity: ${(props) => (props.zoom ? 1 : 0)};
 `;
