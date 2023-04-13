@@ -23,6 +23,7 @@ import SkillComponent from "@/src/components/units/skills/skill.container";
 import IntroductionProfile from "@/src/components/units/introduction/intro.profile/intro.profile.container";
 import IntroductionComment from "@/src/components/units/introduction/intro.comment/intro.commment.container";
 import { SearchOutlined } from "@ant-design/icons";
+import Experience from "@/src/components/units/experience/experience.container";
 
 export default function LeafletPortfolio() {
   const [dx, setDx] = useState(0);
@@ -127,9 +128,9 @@ export default function LeafletPortfolio() {
                 target={targetBox}
               >
                 <ContentsTitle>Skills</ContentsTitle>
-                <Contents zoom={zoom}>
+                {/* <Contents zoom={zoom}>
                   이런 기술 스택을 보유하고 있습니다.
-                </Contents>
+                </Contents> */}
                 <SkillComponent zoom={zoom}></SkillComponent>
               </PageFaceInnerBox>
               <MoreView zoom={zoom}>
@@ -160,7 +161,8 @@ export default function LeafletPortfolio() {
                 target={targetBox}
               >
                 <ContentsTitle>Experience</ContentsTitle>
-                <Contents zoom={zoom}>이런 경험이 있습니다.</Contents>
+                {/* <Contents zoom={zoom}>이런 경험이 있습니다.</Contents> */}
+                <Experience zoom={zoom} />
               </PageFaceInnerBox>
               <MoreView zoom={zoom}>
                 <MySearch />
