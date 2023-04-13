@@ -4,7 +4,7 @@ import * as S from "./intro.profile.styles";
 export default function IntroductionProfile(props) {
   return (
     <>
-      <S.ProfileWrapper zoom={props.zoom}>
+      <S.ProfileWrapper>
         <S.ProfileImage src="/img/profileImg.png" />
         <S.ProfileContentsWrapper>
           <S.ProfileName>한주연</S.ProfileName>

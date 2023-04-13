@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Contents = styled.span`
+export const Contents = styled.div`
   @media (max-width: 1200px) {
     font-size: 10px;
   }
@@ -19,15 +19,18 @@ export const Contents = styled.span`
   line-height: 1.5;
   word-break: keep-all;
   text-align: justify;
-  /* position: absolute; */
-  position: ${(props) => {
+  /* position: ${(props) => {
     return props.zoom ? "static" : "absolute";
   }};
   left: 0;
-  top: 2em;
+  top: 2em; */
   @media (min-width: 1500px) {
     font-size: 14px;
   }
+  /* background-color: aliceblue; */
+  background-color: ${(props) => {
+    return props.zoom ? "none" : "aliceblue";
+  }};
 `;
 export const Bold = styled.span`
   @media (max-width: 1200px) {

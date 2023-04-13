@@ -9,6 +9,7 @@ import {
   CoverWrapper,
   Leaflet,
   MoreView,
+  MySearch,
   Notice,
   Page1,
   Page2,
@@ -21,6 +22,7 @@ import { useRef, useState } from "react";
 import SkillComponent from "@/src/components/units/skills/skill.container";
 import IntroductionProfile from "@/src/components/units/introduction/intro.profile/intro.profile.container";
 import IntroductionComment from "@/src/components/units/introduction/intro.comment/intro.commment.container";
+import { SearchOutlined } from "@ant-design/icons";
 
 export default function LeafletPortfolio() {
   const [dx, setDx] = useState(0);
@@ -30,6 +32,7 @@ export default function LeafletPortfolio() {
   const [zoom, setZoom] = useState(false);
   const page1Ref = useRef(null);
   const [targetBox, setTargetBox] = useState(0);
+  const [page, setPage] = useState(0);
 
   const onClickPage = (page) => (event) => {
     if (page === 1) {
@@ -44,6 +47,7 @@ export default function LeafletPortfolio() {
     if (!zoom) {
       const rect = event.currentTarget.getBoundingClientRect();
       setDx(window.innerWidth / 2 - (rect.x + rect.width / 2));
+      console.log(`${dx}는 dx, ${dy}는 dy`);
       // setDy(window.innerHeight / 2 - (rect.y + rect.height / 2));
       setDz(500);
       if (page === 1) {
@@ -54,6 +58,7 @@ export default function LeafletPortfolio() {
         setAngle(30);
       }
       setZoom(true);
+      setPage(page);
     }
     setTargetBox(num);
   };
@@ -90,7 +95,7 @@ export default function LeafletPortfolio() {
               </CoverWrapper>
             </PageFace>
             <PageFace>
-              <BackBtn onClick={onClickBack} zoom={zoom}>
+              <BackBtn onClick={onClickBack} zoom={zoom} back={1} page={page}>
                 ←뒤로가기
               </BackBtn>
               <PageFaceInnerBox
@@ -102,14 +107,21 @@ export default function LeafletPortfolio() {
                 <ContentsTitle>Introduction</ContentsTitle>
                 <IntroductionProfile zoom={zoom} />
                 <IntroductionComment zoom={zoom} />
-
-                <MoreView zoom={zoom}>더보기</MoreView>
               </PageFaceInnerBox>
-              <BackBtn onClick={onClickBack} zoom={zoom}>
+              <MoreView zoom={zoom}>
+                <MySearch />
+                <span>click!!</span>
+              </MoreView>
+            </PageFace>
+          </Page1>
+          <Page2>
+            <PageFace>
+              <BackBtn onClick={onClickBack} zoom={zoom} back={2} page={page}>
                 ←뒤로가기
               </BackBtn>
+
               <PageFaceInnerBox
-                onClick={onClickZoomIn(1, 2)}
+                onClick={onClickZoomIn(2, 2)}
                 zoom={zoom}
                 num={2}
                 target={targetBox}
@@ -118,36 +130,12 @@ export default function LeafletPortfolio() {
                 <Contents zoom={zoom}>
                   이런 기술 스택을 보유하고 있습니다.
                 </Contents>
-                <MoreView zoom={zoom}>더보기</MoreView>
                 <SkillComponent zoom={zoom}></SkillComponent>
               </PageFaceInnerBox>
-              <BackBtn onClick={onClickBack} zoom={zoom}>
-                ←뒤로가기
-              </BackBtn>
-              <PageFaceInnerBox
-                onClick={onClickZoomIn(1, 3)}
-                zoom={zoom}
-                num={3}
-                target={targetBox}
-              >
-                <ContentsTitle>Experience</ContentsTitle>
-              </PageFaceInnerBox>
-            </PageFace>
-          </Page1>
-          <Page2>
-            <PageFace>
-              <BackBtn onClick={onClickBack} zoom={zoom}>
-                ←뒤로가기
-              </BackBtn>
-              <PageFaceInnerBox
-                onClick={onClickZoomIn(2, 4)}
-                zoom={zoom}
-                num={4}
-                target={targetBox}
-              >
-                <ContentsTitle>Project</ContentsTitle>
-                <ProjectCard></ProjectCard>
-              </PageFaceInnerBox>
+              <MoreView zoom={zoom}>
+                <MySearch />
+                <span>click!!</span>
+              </MoreView>
             </PageFace>
             <PageFace>2B</PageFace>
           </Page2>
@@ -161,17 +149,23 @@ export default function LeafletPortfolio() {
               <CloseBtn onClick={onClickClose} zoom={zoom}>
                 ✗ close
               </CloseBtn>
-              <BackBtn onClick={onClickBack} zoom={zoom}>
+              <BackBtn onClick={onClickBack} zoom={zoom} back={3} page={page}>
                 ←뒤로가기
               </BackBtn>
+
               <PageFaceInnerBox
                 onClick={onClickZoomIn(3, 5)}
                 zoom={zoom}
                 num={5}
                 target={targetBox}
               >
-                <ContentsTitle>Project</ContentsTitle>
+                <ContentsTitle>Experience</ContentsTitle>
+                <Contents zoom={zoom}>이런 경험이 있습니다.</Contents>
               </PageFaceInnerBox>
+              <MoreView zoom={zoom}>
+                <MySearch />
+                <span>click!!</span>
+              </MoreView>
             </PageFace>
           </Page3>
         </Leaflet>

@@ -1,3 +1,4 @@
+import { SearchOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
@@ -150,17 +151,18 @@ export const CoverSubTitle = styled.div`
 export const PageFaceInnerBox = styled.div`
   width: 100%;
   position: relative;
-  /* height: 20%; */
-  height: ${(props) => {
+  height: 100%;
+  cursor: pointer;
+  /* margin-bottom: 5%; */
+
+  /* background-color: aliceblue; */
+  /* height: ${(props) => {
     return props.zoom ? "auto" : "30%";
-  }};
+  }}; */
 
-  /* background-color: yellow; */
-  margin-bottom: 5%;
-
-  cursor: ${(props) => {
+  /* cursor: ${(props) => {
     return props.zoom ? "default" : "pointer";
-  }};
+  }}; */
 
   /* &:not(:nth-of-type(${(props) => props.num})) {
     display: ${(props) => {
@@ -178,7 +180,7 @@ export const PageFaceInnerBox = styled.div`
 `;
 export const BackBtn = styled.button`
   position: absolute;
-  right: 0%;
+  right: 3%;
   top: 3%;
   font-size: 8px;
   font-weight: 600;
@@ -187,8 +189,14 @@ export const BackBtn = styled.button`
   z-index: 100;
   padding: 5%;
   cursor: pointer;
+  color: #576cbc;
+
   visibility: ${(props) => {
-    return props.zoom ? "visible" : "hidden";
+    if (!props.zoom) {
+      return "hidden";
+    } else if (props.zoom) {
+      return props.page === props.back ? "visible" : "hidden";
+    }
   }};
 `;
 export const CloseBtn = styled.div`
@@ -238,18 +246,27 @@ export const Contents = styled.span`
 `;
 
 export const MoreView = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: 0%;
+  width: 100%;
+  /* height: 10%; */
+  text-align: end;
+  /* position: absolute;
+  right: 10%;
+  bottom: 10%; */
   font-size: 8px;
   font-weight: 600;
   visibility: ${(props) => {
     return props.zoom ? "hidden" : "visible";
   }};
+
+  color: #576cbc;
 `;
 export const ProjectCard = styled.div`
   width: 100%;
   height: 100%;
   border: 1px solid gray;
   border-radius: 1vh;
+`;
+export const MySearch = styled(SearchOutlined)`
+  font-size: 20px;
+  margin-right: 3%;
 `;

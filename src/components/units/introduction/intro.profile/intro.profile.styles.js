@@ -6,27 +6,27 @@ export const ProfileWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  visibility: ${(props) => {
+  margin-bottom: 10%;
+  /* visibility: ${(props) => {
     return props.zoom ? "visible" : "hidden";
-  }};
+  }}; */
 `;
 export const ProfileContentsWrapper = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10%;
 `;
 export const ProfileImage = styled.img`
-  width: 40%;
-  height: 40%;
+  width: 45%;
+  height: 50%;
 `;
 export const ProfileName = styled.div`
   @media (max-width: 1200px) {
-    font-size: 12px;
+    font-size: 13px;
   }
   font-weight: 600;
   /* font-family: "NotoSans"; */
-  font-size: 17px;
+  font-size: 15px;
 `;
 export const ProfileNameE = styled.div`
   @media (max-width: 1200px) {
@@ -35,7 +35,7 @@ export const ProfileNameE = styled.div`
   font-weight: 500;
   /* font-family: "NotoSans"; */
   margin-bottom: 10%;
-  font-size: 15px;
+  font-size: 13px;
 `;
 export const ProfileContents = styled.div`
   @media (max-width: 1200px) {
