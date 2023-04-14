@@ -26,10 +26,9 @@ export const Contents = styled.div`
     font-size: 14px;
   }
   /* background-color: aliceblue; */
-  /* background-color: ${(props) => {
+  background-color: ${(props) => {
     return props.zoom ? "none" : "aliceblue";
-  }}; */
-  display: ${(props) => (props.zoom ? "block" : "none")};
+  }};
 `;
 export const Bold = styled.span`
   @media (max-width: 1200px) {
@@ -45,9 +44,4 @@ export const Bold = styled.span`
 `;
 export const HiddenWrapper = styled.div`
   opacity: ${(props) => (props.zoom ? 1 : 0)};
-`;
-export const Blur = styled.img`
-  width: 100%;
-  /* opacity: ${(props) => (props.zoom ? 0 : 1)}; */
-  display: ${(props) => (props.zoom ? "none" : "block")};
 `;
