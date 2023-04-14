@@ -179,7 +179,7 @@ export const BackBtn = styled.button`
   z-index: 100;
   padding: 5%;
   cursor: pointer;
-  color: #bdcdd6;
+  color: lightgray;
 
   visibility: ${(props) => {
     if (!props.zoom) {
@@ -211,7 +211,8 @@ export const CloseBtn = styled.div`
 export const ContentsTitle = styled.div`
   font-size: 16px;
   font-weight: bold;
-  color: #bdcdd6;
+  /* color: #bdcdd6; */
+  color: #ffb4b4;
   margin-bottom: 3%;
 `;
 export const Contents = styled.span`
@@ -248,7 +249,7 @@ export const MoreView = styled.div`
     return props.zoom ? "hidden" : "visible";
   }};
 
-  color: #576cbc;
+  color: lightgray;
 `;
 export const ProjectCard = styled.div`
   width: 100%;

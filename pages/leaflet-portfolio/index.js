@@ -110,8 +110,7 @@ export default function LeafletPortfolio() {
                 <IntroductionComment zoom={zoom} />
               </PageFaceInnerBox>
               <MoreView zoom={zoom}>
-                <MySearch src="/img/cursor.png" />
-                <span>click!!</span>
+                <span>- 1 -</span>
               </MoreView>
             </PageFace>
           </Page1>
@@ -134,8 +133,7 @@ export default function LeafletPortfolio() {
                 <SkillComponent zoom={zoom}></SkillComponent>
               </PageFaceInnerBox>
               <MoreView zoom={zoom}>
-                <MySearch src="/img/cursor.png" />
-                <span>click!!</span>
+                <span>- 2 -</span>
               </MoreView>
             </PageFace>
             <PageFace>2B</PageFace>
@@ -165,8 +163,7 @@ export default function LeafletPortfolio() {
                 <Experience zoom={zoom} />
               </PageFaceInnerBox>
               <MoreView zoom={zoom}>
-                <MySearch src="/img/cursor.png" />
-                <span>click!!</span>
+                <span>- 3 -</span>
               </MoreView>
             </PageFace>
           </Page3>
