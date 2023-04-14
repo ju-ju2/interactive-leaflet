@@ -4,160 +4,105 @@ export default function SkillComponent(props) {
   return (
     <>
       <S.Blur zoom={props.zoom} src="/img/page2_moreView.png" />
-      <S.SkillContainer zoom={props.zoom}>
-        <S.SkillWrapper>
-          <S.SkillTitle>Language</S.SkillTitle>
-          <S.SkillContentsContainer zoom={props.zoom}>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/javascript.svg" /> */}
-              <S.SkillContentsTitle>javascript</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"100%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/typescript.svg" /> */}
-              <S.SkillContentsTitle>typescript</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"80%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-          </S.SkillContentsContainer>
-        </S.SkillWrapper>
-        <S.SkillWrapper>
-          <S.SkillTitle>Framework</S.SkillTitle>
-          <S.SkillContentsContainer zoom={props.zoom}>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/react.svg" /> */}
-              <S.SkillContentsTitle>React</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"80%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/nextjs.svg" /> */}
-
-              <S.SkillContentsTitle>Next.js</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"60%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/nodejs.svg" /> */}
-
-              <S.SkillContentsTitle>Node.js</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"60%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-          </S.SkillContentsContainer>
-        </S.SkillWrapper>
-        <S.SkillWrapper>
-          <S.SkillTitle>MarkUp</S.SkillTitle>
-          <S.SkillContentsContainer zoom={props.zoom}>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/html.svg" /> */}
-
-              <S.SkillContentsTitle>HTML</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"100%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/css.svg" /> */}
-
-              <S.SkillContentsTitle>CSS</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"100%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-            <S.SkillContentsWrapper>
-              <S.SkillContentsTitle>Emotion</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"100%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-          </S.SkillContentsContainer>
-        </S.SkillWrapper>
-        <S.SkillWrapper>
-          <S.SkillTitle>Database</S.SkillTitle>
-          <S.SkillContentsContainer zoom={props.zoom}>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/firebase.svg" /> */}
-
-              <S.SkillContentsTitle>Firebase</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"60%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/mongodb.svg" /> */}
-
-              <S.SkillContentsTitle>MongoDB</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"60%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-          </S.SkillContentsContainer>
-        </S.SkillWrapper>
-        <S.SkillWrapper>
-          <S.SkillTitle>Tool</S.SkillTitle>
-          <S.SkillContentsContainer zoom={props.zoom}>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/git.svg" /> */}
-
-              <S.SkillContentsTitle>Git</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"100%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-            <S.SkillContentsWrapper>
-              {/* <S.SkillIcon src="/img/skills/github.svg" /> */}
-
-              <S.SkillContentsTitle>Github</S.SkillContentsTitle>
-              <S.SkillChartDiv>
-                <S.SkillChartPer
-                  zoom={props.zoom}
-                  per={"100%"}
-                ></S.SkillChartPer>
-              </S.SkillChartDiv>
-            </S.SkillContentsWrapper>
-          </S.SkillContentsContainer>
-        </S.SkillWrapper>
-      </S.SkillContainer>
+      <S.Container zoom={props.zoom}>
+        <S.Wrapper>
+          <S.Title>Language</S.Title>
+          <S.ContentsContainer zoom={props.zoom}>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>javascript</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"100%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>typescript</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"80%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+          </S.ContentsContainer>
+        </S.Wrapper>
+        <S.Wrapper>
+          <S.Title>Framework</S.Title>
+          <S.ContentsContainer zoom={props.zoom}>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>React</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"80%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>Next.js</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"60%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>Node.js</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"60%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+          </S.ContentsContainer>
+        </S.Wrapper>
+        <S.Wrapper>
+          <S.Title>MarkUp</S.Title>
+          <S.ContentsContainer zoom={props.zoom}>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>HTML</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"100%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>CSS</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"100%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>Emotion</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"100%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+          </S.ContentsContainer>
+        </S.Wrapper>
+        <S.Wrapper>
+          <S.Title>Database</S.Title>
+          <S.ContentsContainer zoom={props.zoom}>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>Firebase</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"60%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>MongoDB</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"60%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+          </S.ContentsContainer>
+        </S.Wrapper>
+        <S.Wrapper>
+          <S.Title>Tool</S.Title>
+          <S.ContentsContainer zoom={props.zoom}>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>Git</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"100%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+            <S.ContentsWrapper>
+              <S.ContentsTitle>Github</S.ContentsTitle>
+              <S.ChartDiv>
+                <S.ChartPer zoom={props.zoom} per={"100%"}></S.ChartPer>
+              </S.ChartDiv>
+            </S.ContentsWrapper>
+          </S.ContentsContainer>
+        </S.Wrapper>
+      </S.Container>
     </>
   );
 }

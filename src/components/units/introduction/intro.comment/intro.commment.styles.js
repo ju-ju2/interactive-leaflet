@@ -20,7 +20,9 @@ export const Contents = styled.div`
     font-size: 14px;
   }
 
-  display: ${(props) => (props.zoom ? "block" : "none")};
+  visibility: ${(props) => {
+    return props.zoom ? "visible" : "hidden";
+  }};
 `;
 export const Bold = styled.span`
   @media (max-width: 1200px) {
@@ -34,12 +36,10 @@ export const Bold = styled.span`
     font-size: 15px;
   }
 `;
-// export const HiddenWrapper = styled.div`
-//   opacity: ${(props) => (props.zoom ? 1 : 0)};
-// `;
+
 export const Blur = styled.img`
   width: 100%;
-  /* opacity: ${(props) => (props.zoom ? 0 : 1)}; */
-  display: ${(props) => (props.zoom ? "none" : "block")};
+  display: ${(props) => (props.clickPage1 || props.zoom ? "none" : "block")};
+
   margin-top: 10%;
 `;

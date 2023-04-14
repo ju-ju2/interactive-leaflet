@@ -1,31 +1,19 @@
 import styled from "@emotion/styled";
 
-// export const SkillContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   margin-top: 10%;
-//   /* visibility: ${(props) => {
-//     return props.zoom ? "visible" : "hidden";
-//   }}; */
-//   display: ${(props) => (props.zoom ? "block" : "none")};
-// `;
-export const SkillContainer = styled.div`
-  /* display: ${(props) => (props.zoom ? "flex" : "none")}; */
-
+export const Container = styled.div`
   visibility: ${(props) => {
     return props.zoom ? "visible" : "hidden";
   }};
   flex-direction: column;
   margin-top: 10%;
-  /* transition: all 1s ease-in-out; */
 `;
-export const SkillWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   margin-bottom: 10%;
 `;
-export const SkillTitle = styled.div`
+export const Title = styled.div`
   font-size: 12px;
   width: 50%;
   font-weight: 600;
@@ -33,7 +21,7 @@ export const SkillTitle = styled.div`
     font-size: 10px;
   }
 `;
-export const SkillContentsContainer = styled.div`
+export const ContentsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -42,12 +30,12 @@ export const SkillContentsContainer = styled.div`
     return props.zoom ? "none" : "aliceblue";
   }};
 `;
-export const SkillContentsWrapper = styled.div`
+export const ContentsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
-export const SkillContentsTitle = styled.div`
+export const ContentsTitle = styled.div`
   font-size: 12px;
 
   margin-right: auto;
@@ -55,14 +43,13 @@ export const SkillContentsTitle = styled.div`
     font-size: 10px;
   }
 `;
-export const SkillChartDiv = styled.div`
+export const ChartDiv = styled.div`
   width: 60%;
   height: 8px;
   background-color: #eeeeee;
 `;
 
-export const SkillChartPer = styled.div`
-  /* opacity: ${(props) => (props.zoom ? 1 : 0)}; */
+export const ChartPer = styled.div`
   width: ${(props) => props.per};
   height: 100%;
   background-color: #ffb4b4;
@@ -70,7 +57,7 @@ export const SkillChartPer = styled.div`
   transform: scaleX(${(props) => (props.zoom ? 1 : 0)});
   transition: ${(props) => (props.zoom ? "all 1s ease-in-out" : "none")};
 `;
-export const SkillIcon = styled.img`
+export const Icon = styled.img`
   @media (max-width: 1400px) {
     width: 10px;
     height: 10px;
@@ -80,9 +67,6 @@ export const SkillIcon = styled.img`
   margin-right: 6px;
 `;
 
-export const HiddenWrapper = styled.div`
-  opacity: ${(props) => (props.zoom ? 1 : 0)};
-`;
 export const Blur = styled.img`
   width: 100%;
   display: ${(props) => (props.zoom ? "none" : "block")};

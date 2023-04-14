@@ -211,57 +211,16 @@ export const CloseBtn = styled.div`
 export const ContentsTitle = styled.div`
   font-size: 16px;
   font-weight: bold;
-  /* color: #bdcdd6; */
   color: #ffb4b4;
   margin-bottom: 3%;
 `;
-export const Contents = styled.span`
-  @media (max-width: 1200px) {
-    font-size: 10px;
-  }
 
-  font-size: 12px;
-  /* font-size: 8px; */
-  display: -webkit-box;
-  /* 표시할 줄 수 */
-  -webkit-line-clamp: ${(props) => {
-    return props.zoom ? "100" : "2";
-  }};
-  /* -webkit-line-clamp: 2;  */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.5;
-  word-break: keep-all;
-  text-align: justify;
-`;
-
-export const MoreView = styled.div`
+export const PageNum = styled.div`
   width: 100%;
-  /* height: 10%; */
   text-align: end;
-  /* position: absolute;
-  right: 10%;
-  bottom: 10%; */
   font-size: 10px;
   font-weight: 600;
   visibility: ${(props) => {
     return props.zoom ? "hidden" : "visible";
   }};
-
-  color: lightgray;
-`;
-export const ProjectCard = styled.div`
-  width: 100%;
-  height: 100%;
-  border: 1px solid gray;
-  border-radius: 1vh;
-`;
-// export const MySearch = styled(SearchOutlined)`
-//   font-size: 20px;
-//   margin-right: 3%;
-// `;
-export const MySearch = styled.img`
-  width: 20px;
-  margin-right: 3%;
 `;
