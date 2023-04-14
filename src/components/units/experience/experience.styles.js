@@ -7,6 +7,7 @@ export const ExperienceContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 10%;
+  display: ${(props) => (props.zoom ? "flex" : "none")};
 `;
 export const ExperienceWrapper = styled.div`
   width: 100%;
@@ -14,7 +15,7 @@ export const ExperienceWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
 `;
 export const ExperienceTitle = styled.div`
   width: 30%;
@@ -25,13 +26,12 @@ export const ExperienceTitle = styled.div`
   }
 `;
 export const ExperienceContentsWrapper = styled.div`
-  width: 75%;
-  height: ${(props) => (props.zoom ? "auto" : "70px")};
+  width: 65%;
+  /* height: ${(props) => (props.zoom ? "auto" : "70px")}; */
   display: flex;
   flex-direction: column;
-  margin-right: auto;
-  /* background-color: aliceblue; */
-  background-color: ${(props) => (props.zoom ? "none" : "aliceblue")};
+  /* margin-right: auto; */
+  /* background-color: ${(props) => (props.zoom ? "none" : "aliceblue")}; */
 `;
 export const ExperienceYear = styled.div`
   width: 100%;
@@ -48,4 +48,10 @@ export const ExperienceContents = styled.div`
 `;
 export const HiddenWrapper = styled.div`
   opacity: ${(props) => (props.zoom ? 1 : 0)};
+`;
+export const Blur = styled.img`
+  width: 100%;
+  /* opacity: ${(props) => (props.zoom ? 0 : 1)}; */
+  display: ${(props) => (props.zoom ? "none" : "block")};
+  margin-top: 10%;
 `;
