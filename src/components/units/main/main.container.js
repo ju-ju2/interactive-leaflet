@@ -1,5 +1,5 @@
 import * as S from "./main.styles";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SkillComponent from "@/src/components/units/skills/skill.container";
 import IntroductionProfile from "@/src/components/units/introduction/intro.profile/intro.profile.container";
 import IntroductionComment from "@/src/components/units/introduction/intro.comment/intro.commment.container";
@@ -15,6 +15,7 @@ export default function LeafletPortfolioMain() {
   const page1Ref = useRef(null);
   const [targetBox, setTargetBox] = useState(0);
   const [page, setPage] = useState(0);
+  const leafletRef = useRef(null);
 
   const onClickPage = (page) => (event) => {
     if (page === 1) {
@@ -62,6 +63,11 @@ export default function LeafletPortfolioMain() {
       }
     }, 500);
   };
+  useEffect(() => {
+    leafletRef.current.addEventListener("animationend", () => {
+      leafletRef.current.style.animation = "none";
+    });
+  }, []);
   return (
     <>
       <Head>
@@ -78,7 +84,7 @@ export default function LeafletPortfolioMain() {
         <S.Notice>
           가로 1024px 사이즈 이상의 환경에서만 구현가능합니다.🙆🏻‍♀️
         </S.Notice>
-        <S.Leaflet dx={dx} dy={dy} dz={dz} angle={angle}>
+        <S.Leaflet ref={leafletRef} dx={dx} dy={dy} dz={dz} angle={angle}>
           <S.Page1 onClick={onClickPage(1)}>
             <S.PageFace>
               <S.CoverWrapper>

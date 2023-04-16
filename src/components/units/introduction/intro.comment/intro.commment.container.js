@@ -1,10 +1,11 @@
-import { Blur, Bold, Contents, HiddenWrapper } from "./intro.commment.styles";
+import { prefix } from "@/config/config";
+import { Blur, Bold, Contents } from "./intro.commment.styles";
 
 export default function IntroductionComment(props) {
   return (
     <>
       <Blur
-        src="/img/page1_moreView.png"
+        src={`${prefix}/img/page1_moreView.png`}
         zoom={props.zoom}
         clickPage1={props.clickPage1}
       />

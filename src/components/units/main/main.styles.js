@@ -1,5 +1,15 @@
 import { prefix } from "@/config/config";
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
+
+export const leafletAni = keyframes`
+  0% {
+    transform: translate(-100%, 100%) rotate(-540deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+`;
 
 export const Container = styled.div`
   background-image: url("${prefix}/img/background.jpeg");
@@ -44,7 +54,7 @@ export const Leaflet = styled.div`
     height: 525px;
   }
 
-  /* animation: leaflet-ani 1s forwards; */
+  animation: ${leafletAni} 1s forwards;
 
   transform: translate3d(
       ${(props) => {
@@ -137,7 +147,8 @@ export const CoverTitle = styled.div`
   font-size: 5vw;
   text-align: center;
   margin-bottom: 10%;
-  font-family: "myfont";
+  /* font-family: "myfont"; */
+  font-family: "Shadows Into Light Two", cursive;
 `;
 export const CoverSubTitle = styled.div`
   @media (min-width: 1500px) {
@@ -145,7 +156,8 @@ export const CoverSubTitle = styled.div`
   }
   font-size: 2vw;
   text-align: center;
-  font-family: "myfont";
+  /* font-family: "myfont"; */
+  font-family: "Shadows Into Light Two", cursive;
 `;
 
 export const PageFaceInnerBox = styled.div`
