@@ -2,11 +2,14 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
   width: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-top: 10%;
+  overflow: scroll;
+
   visibility: ${(props) => {
     return props.zoom ? "visible" : "hidden";
   }};
