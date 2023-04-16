@@ -1,11 +1,12 @@
 import { GithubOutlined, MailOutlined } from "@ant-design/icons";
 import * as S from "./intro.profile.styles";
+import { prefix } from "@/config/config";
 
-export default function IntroductionProfile(props) {
+export default function IntroductionProfile() {
   return (
     <>
       <S.ProfileWrapper>
-        <S.ProfileImage src="/img/profileImg.png" />
+        <S.ProfileImage src={`${prefix}/img/profileImg.png`} />
         <S.ProfileContentsWrapper>
           <S.ProfileName>한주연</S.ProfileName>
           <S.ProfileNameE>HAN JUYEON.</S.ProfileNameE>

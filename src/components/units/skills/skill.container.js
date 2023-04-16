@@ -1,9 +1,10 @@
+import { prefix } from "@/config/config";
 import * as S from "./skill.styles";
 
 export default function SkillComponent(props) {
   return (
     <>
-      <S.Blur zoom={props.zoom} src="/img/page2_moreView.png" />
+      <S.Blur zoom={props.zoom} src={`${prefix}/img/page2_moreView.png`} />
       <S.Container zoom={props.zoom}>
         <S.Wrapper>
           <S.Title>Language</S.Title>

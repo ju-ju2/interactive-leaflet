@@ -1,9 +1,10 @@
+import { prefix } from "@/config/config";
 import * as Exp from "./experience.styles";
 
 export default function Experience(props) {
   return (
     <>
-      <Exp.Blur src="/img/page3_moreView.png" zoom={props.zoom} />
+      <Exp.Blur src={`${prefix}/img/page3_moreView.png`} zoom={props.zoom} />
       <Exp.Container zoom={props.zoom}>
         <Exp.Wrapper>
           <Exp.Title>Work</Exp.Title>

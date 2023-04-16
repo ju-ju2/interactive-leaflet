@@ -1,8 +1,8 @@
-import { SearchOutlined } from "@ant-design/icons";
+import { prefix } from "@/config/config";
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  background-image: url("./img/background.jpeg");
+  background-image: url("${prefix}/img/background.jpeg");
   background-size: cover;
   width: 100vw;
   height: 100vh;
