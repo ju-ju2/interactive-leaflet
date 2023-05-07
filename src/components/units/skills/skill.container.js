@@ -4,7 +4,7 @@ import * as S from "./skill.styles";
 export default function SkillComponent(props) {
   return (
     <>
-      <S.Blur zoom={props.zoom} src={`${prefix}/img/page2_moreView.png`} />
+      <S.Blur zoom={props.zoom} src={`${prefix}/img/page2_moreView2.png`} />
       <S.Container zoom={props.zoom}>
         <S.Wrapper>
           <S.Title>Language</S.Title>
@@ -78,12 +78,12 @@ export default function SkillComponent(props) {
                 <S.ChartPer zoom={props.zoom} per={"60%"}></S.ChartPer>
               </S.ChartDiv>
             </S.ContentsWrapper>
-            <S.ContentsWrapper>
+            {/* <S.ContentsWrapper>
               <S.ContentsTitle>MongoDB</S.ContentsTitle>
               <S.ChartDiv>
                 <S.ChartPer zoom={props.zoom} per={"60%"}></S.ChartPer>
               </S.ChartDiv>
-            </S.ContentsWrapper>
+            </S.ContentsWrapper> */}
           </S.ContentsContainer>
         </S.Wrapper>
         <S.Wrapper>
@@ -92,13 +92,13 @@ export default function SkillComponent(props) {
             <S.ContentsWrapper>
               <S.ContentsTitle>Git</S.ContentsTitle>
               <S.ChartDiv>
-                <S.ChartPer zoom={props.zoom} per={"100%"}></S.ChartPer>
+                <S.ChartPer zoom={props.zoom} per={"80%"}></S.ChartPer>
               </S.ChartDiv>
             </S.ContentsWrapper>
             <S.ContentsWrapper>
               <S.ContentsTitle>Github</S.ContentsTitle>
               <S.ChartDiv>
-                <S.ChartPer zoom={props.zoom} per={"100%"}></S.ChartPer>
+                <S.ChartPer zoom={props.zoom} per={"80%"}></S.ChartPer>
               </S.ChartDiv>
             </S.ContentsWrapper>
           </S.ContentsContainer>

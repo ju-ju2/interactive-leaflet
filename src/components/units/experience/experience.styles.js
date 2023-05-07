@@ -8,7 +8,9 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 10%;
-  overflow: scroll;
+  @media (max-width: 1300px) {
+    overflow: scroll;
+  }
 
   visibility: ${(props) => {
     return props.zoom ? "visible" : "hidden";
